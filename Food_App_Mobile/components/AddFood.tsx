@@ -52,14 +52,14 @@ export default function AddFood() {
             <Text style={styles.label}>Descripcion:</Text>
             <TextInput
                 style={styles.input}
-                value={descripcion}
+                value={precio}
                 onChangeText={setPrecio}
             />
 
             <Text style={styles.label}>Descripcion:</Text>
             <TextInput
                 style={styles.input}
-                value={descripcion}
+                value={cantidad}
                 onChangeText={setCantidad}
             />
 
