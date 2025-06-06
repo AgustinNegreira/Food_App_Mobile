@@ -2,34 +2,49 @@ import react from 'react';
 import { useState } from 'react';
 import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
 
-export default function OrderEmergent({totalOrders, totalPrice}) {
+export default function OrderEmergent({ totalOrders, totalPrice }) {
 
-    const [showAlt, setShowAlt] = useState(false);
+    const [showAlt, setShowAlt] = useState(true);
 
     const handleTocuh = () => {
-        setShowAlt(true);
+        setShowAlt(!showAlt);
     }
 
     return (
-
         <View style={styles.container}>
-            {!showAlt && (
+            {showAlt === true ? (
                 <>
                     <Text style={styles.label}>Cantidad de órdenes: {totalOrders}</Text>
                     <Text style={styles.label}>Precio total: {totalPrice.toFixed(2)}</Text>
-                    
+                    <TouchableOpacity>
+                        <Text>
+                            hacer pedido
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={handleTocuh}>
+                        <Text>
+                            Ver carrito
+                        </Text>
+                    </TouchableOpacity>
                 </>
+            ) : (
+                <>
+                    <TouchableOpacity onPress={handleTocuh}>
+                        <Text>
+                            volver
+                        </Text>
+                    </TouchableOpacity>
 
+                    <TouchableOpacity>
+                        <Text>
+                            hacer pedido
+                        </Text>
+                    </TouchableOpacity>
+                </>
             )}
-
-            <TouchableOpacity onPress={handleTocuh}>
-                <Text>
-                    hacer pedido
-                </Text>
-            </TouchableOpacity>
         </View>
-
     )
+
 };
 
 const styles = StyleSheet.create({
