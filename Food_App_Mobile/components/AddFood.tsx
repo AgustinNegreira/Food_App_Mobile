@@ -28,6 +28,7 @@ export default function AddFood() {
               setDescripcion('');
               setPrecio('');
               setCantidad('');
+              setEmoji('');
           } catch (error) {
               Alert.alert('Error', 'No se pudo crear la comida');
               console.error(error);
