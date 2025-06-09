@@ -1,0 +1,45 @@
+{
+    "foods": [
+        {
+            "id": "1",
+            "name": "Burger",
+            "price": 5,
+            "stock": 5,
+            "img": "🍔",
+            "description": "Deliciosa hamburguesa con carne jugosa y pan recién horneado."
+        },
+        {
+            "id": "2",
+            "name": "Taco",
+            "price": 3,
+            "stock": 4,
+            "img": "🌮",
+            "description": "Taco tradicional con tortilla de maíz rellena de carne sazonada, cebolla, cilantro fresco y un toque de limón."
+        },
+        {
+            "id": "3",
+            "name": "Pancho",
+            "price": 1,
+            "stock": 0,
+            "img": "🌭",
+            "description": "Pancho clásico con salchicha a la parrilla, servido en pan suave y acompañado con tus aderezos favoritos."
+        },
+        {
+            "id": "4",
+            "name": "Burrito",
+            "price": 3,
+            "stock": 2,
+            "img": "🌯",
+            "description": "Burrito relleno de carne, frijoles y arroz con un toque picante."
+        },
+        {
+            "id": "5",
+            "name": "Fries",
+            "price": 1,
+            "stock": 4,
+            "img": "🍟",
+            "description": "Papas fritas crujientes con sal marina."
+        }
+    ],
+    "orders": []
+}
