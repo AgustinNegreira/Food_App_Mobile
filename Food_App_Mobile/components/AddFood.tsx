@@ -2,33 +2,33 @@ import React, { useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function AddFood() {
-    const [nombre, setNombre] = useState('');
+    const [name, setName] = useState('');
     const [descripcion, setDescripcion] = useState('');
-    const [precio, setPrecio] = useState('');
-    const [cantidad, setCantidad] = useState('');
-    const [emoji, setEmoji] = useState('');
+    const [price, setPrice] = useState('');
+    const [stock, setStock] = useState('');
+    const [img, setImg] = useState('');
 
     const handleSubmit = async () => {
         try {
-            const response = await fetch('http://localhost:3000/usuarios', {
+            const response = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/usuarios`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    nombre,
+                    name,
                     descripcion,
-                    precio,
-                    cantidad,
-                    emoji
+                    price,
+                    stock,
+                    img
                 }),
             });
             Alert.alert('Éxito', 'Comida creada correctamente');
-            setNombre('');
+            setName('');
             setDescripcion('');
-            setPrecio('');
-            setCantidad('');
-            setEmoji('');
+            setPrice('');
+            setStock('');
+            setImg('');
         } catch (error) {
             Alert.alert('Error', 'No se pudo crear la comida');
             console.error(error);
@@ -41,8 +41,8 @@ export default function AddFood() {
             <Text style={styles.label}>Nombre:</Text>
             <TextInput
                 style={styles.input}
-                value={nombre}
-                onChangeText={setNombre}
+                value={name}
+                onChangeText={setName}
             />
 
             <Text style={styles.label}>Descripcion:</Text>
@@ -55,22 +55,22 @@ export default function AddFood() {
             <Text style={styles.label}>Precio:</Text>
             <TextInput
                 style={styles.input}
-                value={precio}
-                onChangeText={setPrecio}
+                value={price}
+                onChangeText={setPrice}
             />
 
-            <Text style={styles.label}>Cantidad:</Text>
+            <Text style={styles.label}>Stock:</Text>
             <TextInput
                 style={styles.input}
-                value={cantidad}
-                onChangeText={setCantidad}
+                value={stock}
+                onChangeText={setStock}
             />
 
             <Text style={styles.label}>Emoji:</Text>
             <TextInput
                 style={styles.input}
-                value={emoji}
-                onChangeText={setEmoji}
+                value={img}
+                onChangeText={setImg}
             />
 
             <Button title="Crear" onPress={handleSubmit} />
