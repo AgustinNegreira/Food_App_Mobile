@@ -11,70 +11,77 @@ export default function OrderEmergent({ totalOrders, totalPrice }) {
     }
 
     return (
-        <View style={styles.container}>
-            {showAlt === true ? (
-                <>
-                    <Text style={styles.label}>Cantidad de órdenes: {totalOrders}</Text>
-                    <Text style={styles.label}>Precio total: {totalPrice.toFixed(2)}</Text>
-                    <TouchableOpacity>
-                        <Text>
-                            hacer pedido
-                        </Text>
+        <View style={styles.wrapper}>
+            {showAlt ? (
+                <View style={styles.container}>
+                    <View style={styles.infoContainer}>
+                        <Text style={styles.infoText}>{totalOrders} producto{totalOrders !== 1 ? 's' : ''}</Text>
+                        <Text style={styles.infoText}>${totalPrice.toFixed(2)}</Text>
+                    </View>
+                    <TouchableOpacity style={styles.button} onPress={handleTocuh}>
+                        <Text style={styles.buttonText}>Ver carrito</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={handleTocuh}>
-                        <Text>
-                            Ver carrito
-                        </Text>
-                    </TouchableOpacity>
-                </>
+                </View>
             ) : (
-                <>
-                    <TouchableOpacity onPress={handleTocuh}>
-                        <Text>
-                            volver
-                        </Text>
+                <View style={styles.container}>
+                    <TouchableOpacity style={styles.button} onPress={handleTocuh}>
+                        <Text style={styles.buttonText}>Volver</Text>
                     </TouchableOpacity>
-
-                    <TouchableOpacity>
-                        <Text>
-                            hacer pedido
-                        </Text>
+                    <TouchableOpacity style={styles.secondaryButton}>
+                        <Text style={styles.secondaryButtonText}>Hacer pedido</Text>
                     </TouchableOpacity>
-                </>
+                </View>
             )}
         </View>
-    )
-
+    );
 };
 
 const styles = StyleSheet.create({
+    wrapper: {
+        position: 'absolute',
+        bottom: 20,
+        left: 20,
+        right: 20,
+    },
     container: {
-        padding: 16,
-        backgroundColor: '#f9f9f9',
-        borderRadius: 12,
-        margin: 10,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
+        backgroundColor: '#fff',
+        padding: 12,
+        borderRadius: 20,
+        shadowColor: '#000',
+        shadowOpacity: 0.1,
+        shadowOffset: { width: 0, height: 2 },
+        shadowRadius: 8,
+        elevation: 5,
     },
-    label: {
-        fontSize: 16,
-        color: '#333',
-        marginBottom: 4,
+    infoContainer: {
+        flexDirection: 'column',
     },
-    value: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        marginBottom: 12,
+    infoText: {
+        fontSize: 14,
         color: '#000',
     },
     button: {
-        backgroundColor: '#007BFF',
-        paddingVertical: 10,
+        backgroundColor: '#000',
+        paddingVertical: 8,
         paddingHorizontal: 20,
-        borderRadius: 8,
-        marginTop: 10,
+        borderRadius: 16,
     },
     buttonText: {
-        color: '#FFF',
-        fontSize: 16,
+        color: '#fff',
+        fontSize: 14,
+    },
+    secondaryButton: {
+        backgroundColor: '#007BFF',
+        paddingVertical: 8,
+        paddingHorizontal: 20,
+        borderRadius: 16,
+        marginLeft: 10,
+    },
+    secondaryButtonText: {
+        color: '#fff',
+        fontSize: 14,
     },
 });
