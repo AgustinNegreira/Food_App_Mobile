@@ -1,31 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function AddFood() {
     const [name, setName] = useState('');
-    const [descripcion, setDescripcion] = useState('');
+    const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [stock, setStock] = useState('');
     const [img, setImg] = useState('');
 
     const handleSubmit = async () => {
+        const navigation = useNavigation();
+
         try {
-            const response = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/usuarios`, {
+            const response = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/foods`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     name,
-                    descripcion,
-                    price,
-                    stock,
+                    description,
+                    price: parseInt(price, 10),
+                    stock: parseInt(stock, 10),
                     img
                 }),
             });
             Alert.alert('Éxito', 'Comida creada correctamente');
             setName('');
-            setDescripcion('');
+            setDescription('');
             setPrice('');
             setStock('');
             setImg('');
@@ -48,8 +51,8 @@ export default function AddFood() {
             <Text style={styles.label}>Descripcion:</Text>
             <TextInput
                 style={styles.input}
-                value={descripcion}
-                onChangeText={setDescripcion}
+                value={description}
+                onChangeText={setDescription}
             />
 
             <Text style={styles.label}>Precio:</Text>
