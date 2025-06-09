@@ -4,11 +4,17 @@ import { FoodList } from '../components/FoodList';
 import OrderEmergent from '../components/OrderEmergent';
 
 export default function HomePage() {
+
+    console.log()
+
     const [foods, setFoods] = useState([]);
     const [orders, setOrders] = useState([]);
+    const API_URL = process.env.EXPO_PUBLIC_API_URL;
+
+    console.log(API_URL);
 
     useEffect(() => {
-        fetch('http://192.168.1.77:3000/foods') // Cambia esto por tu IP local si lo corrés en emulador/dispositivo
+        fetch(`${API_URL}/foods`)
             .then(res => res.json())
             .then(data => setFoods(data))
             .catch(err => console.error('Error al cargar alimentos:', err));
