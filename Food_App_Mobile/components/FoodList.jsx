@@ -23,7 +23,7 @@ export const styles = StyleSheet.create({
     columnWrapper: {
         justifyContent: 'flex-start',
         paddingHorizontal: 16,
-        columnGap: 16, // si tu versión de RN lo soporta, si no, usar margin en FoodElement
+        columnGap: 16, 
     },
     listContent: {
         paddingVertical: 20,
