@@ -48,3 +48,24 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+
+
+ngrok:
+
+se tiene que actualizar la variable de entorno a mano cada vez que se inicie el tunel
+o sino se puede usar el script updateEnv:
+
+1) asegurarse de tener instalado "axios": npm install axios
+
+2) luego se ejecuta ngrok para generar el tunel: npx ngrok http 3000
+
+3) luego se ejecuta el script "updateEnv" node updateEnv.js
+
+"C:\ngrok\ngrok\ngrok.exe"
+
+
+instalar npm-run-all
+
+npm install --save-dev npm-run-all

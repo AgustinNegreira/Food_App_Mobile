@@ -9,24 +9,22 @@ export default function HomePage() {
     const [orders, setOrders] = useState([]);
     const API_URL = process.env.EXPO_PUBLIC_API_URL;
 
+    console.log(API_URL);
+
     useEffect(() => {
-        fetch(`${API_URL}/foods`)
+        fetch(`${API_URL}/foods`, {
+          headers: {
+            "Content-Type": "Application/json",
+            "ngrok-skip-browser-warning": "true"}
+          
+          })
             .then(res => res.json())
             .then(data => setFoods(data))
             .catch(err => console.error('Error al cargar alimentos:', err));
     }, []);
 
-    const addFood = (selectedFood) => {
-
-        if (selectedFood.stock === 0) {
-            return
-        }
-
-        const updatedFoods = foods.map(food =>
-            food.name === selectedFood.name ? { ...food, stock: food.stock - 1 } : food
-        );
-
-        setOrders((prev) => [...prev, selectedFood]);
+    const addFood = (food) => {
+        setOrders((prev) => [...prev, food]);
     };
     // modificar para reducir el stock del articulo
 
