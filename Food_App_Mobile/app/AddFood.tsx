@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Alert, Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Alert, Button, StyleSheet, Text, TextInput, View, TouchableOpacity } from 'react-native';
 
 export default function AddFood() {
     const [name, setName] = useState('');
@@ -75,7 +75,9 @@ export default function AddFood() {
                 onChangeText={setImg}
             />
 
-            <Button title="Crear" onPress={handleSubmit} />
+            <TouchableOpacity style={styles.button} onPress={handleSubmit}>
+                <Text style={styles.buttonText}>Añadir Comida</Text>
+            </TouchableOpacity>
         </View>
     );
 }
@@ -91,4 +93,14 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         borderRadius: 5,
     },
+    button: {
+        backgroundColor: '#000',
+        paddingVertical: 8,
+        paddingHorizontal: 20,
+        borderRadius: 16,
+    },
+    buttonText: {
+        color: '#fff',
+        fontSize: 14,
+    }
 });
