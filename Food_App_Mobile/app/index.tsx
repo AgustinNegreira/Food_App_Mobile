@@ -1,13 +1,19 @@
 import React from 'react';
-import { Text } from 'react-native';
-import OrderEmergent from '../components/OrderEmergent';
-import HomePage from './HomePage'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomePage from './HomePage';
+import AddFood from './AddFood';
+import OrderPage from './OrderPage';
 
-export default function HomeScreen() {
-  
+const Stack = createNativeStackNavigator();
+
+export default function App() {
   return (
-    <>
-      <HomePage/>
-    </>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomePage} />
+        <Stack.Screen name="AddFood" component={AddFood} options={{ title: 'Agregar Comida' }} />
+        <Stack.Screen name="Orders" component={OrderPage} options={{ title: 'Órdenes' }} />
+      </Stack.Navigator>
+
   );
 }

@@ -10,7 +10,6 @@ export default function AddFood() {
     const [img, setImg] = useState('');
 
     const handleSubmit = async () => {
-        const navigation = useNavigation();
 
         try {
             const response = await fetch(`${process.env.EXPO_PUBLIC_API_URL}/foods`, {

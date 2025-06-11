@@ -1,45 +1,72 @@
 {
-    "foods": [
-        {
-            "id": "1",
-            "name": "Burger",
-            "price": 5,
-            "stock": 5,
-            "img": "🍔",
-            "description": "Deliciosa hamburguesa con carne jugosa y pan recién horneado."
-        },
-        {
-            "id": "2",
-            "name": "Taco",
-            "price": 3,
-            "stock": 4,
-            "img": "🌮",
-            "description": "Taco tradicional con tortilla de maíz rellena de carne sazonada, cebolla, cilantro fresco y un toque de limón."
-        },
-        {
-            "id": "3",
-            "name": "Pancho",
-            "price": 1,
-            "stock": 0,
-            "img": "🌭",
-            "description": "Pancho clásico con salchicha a la parrilla, servido en pan suave y acompañado con tus aderezos favoritos."
-        },
-        {
-            "id": "4",
-            "name": "Burrito",
-            "price": 3,
-            "stock": 2,
-            "img": "🌯",
-            "description": "Burrito relleno de carne, frijoles y arroz con un toque picante."
-        },
-        {
-            "id": "5",
-            "name": "Fries",
-            "price": 1,
-            "stock": 4,
-            "img": "🍟",
-            "description": "Papas fritas crujientes con sal marina."
-        }
-    ],
-    "orders": []
+  "foods": [
+    {
+      "id": "1",
+      "name": "Burger",
+      "price": 5,
+      "stock": 5,
+      "img": "🍔",
+      "description": "Deliciosa hamburguesa con carne jugosa y pan recién horneado."
+    },
+    {
+      "id": "2",
+      "name": "Taco",
+      "price": 3,
+      "stock": 4,
+      "img": "🌮",
+      "description": "Taco tradicional con tortilla de maíz rellena de carne sazonada, cebolla, cilantro fresco y un toque de limón."
+    },
+    {
+      "id": "3",
+      "name": "Pancho",
+      "price": 1,
+      "stock": 0,
+      "img": "🌭",
+      "description": "Pancho clásico con salchicha a la parrilla, servido en pan suave y acompañado con tus aderezos favoritos."
+    },
+    {
+      "id": "4",
+      "name": "Burrito",
+      "price": 3,
+      "stock": 2,
+      "img": "🌯",
+      "description": "Burrito relleno de carne, frijoles y arroz con un toque picante."
+    },
+    {
+      "id": "5",
+      "name": "Fries",
+      "price": 1,
+      "stock": 4,
+      "img": "🍟",
+      "description": "Papas fritas crujientes con sal marina."
+    },
+    {
+      "id": "ce14",
+      "name": "hola",
+      "description": "holaa ",
+      "price": 45,
+      "stock": 3,
+      "img": "🐢"
+    }
+  ],
+  "orders": [
+    {
+      "id": "101",
+      "name": "Burger",
+      "quantity": 2,
+      "price": 5
+    },
+    {
+      "id": "102",
+      "name": "Taco",
+      "quantity": 3,
+      "price": 3
+    },
+    {
+      "id": "103",
+      "name": "Fries",
+      "quantity": 1,
+      "price": 1
+    }
+  ]
 }
