@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Burger",
       "price": 5,
-      "stock": 5,
+      "stock": 54,
       "img": "🍔",
       "description": "Deliciosa hamburguesa con carne jugosa y pan recién horneado."
     },
@@ -12,7 +12,7 @@
       "id": "2",
       "name": "Taco",
       "price": 3,
-      "stock": 4,
+      "stock": 0,
       "img": "🌮",
       "description": "Taco tradicional con tortilla de maíz rellena de carne sazonada, cebolla, cilantro fresco y un toque de limón."
     },
@@ -20,7 +20,7 @@
       "id": "3",
       "name": "Pancho",
       "price": 1,
-      "stock": 0,
+      "stock": 6,
       "img": "🌭",
       "description": "Pancho clásico con salchicha a la parrilla, servido en pan suave y acompañado con tus aderezos favoritos."
     },
@@ -28,7 +28,7 @@
       "id": "4",
       "name": "Burrito",
       "price": 3,
-      "stock": 2,
+      "stock": 0,
       "img": "🌯",
       "description": "Burrito relleno de carne, frijoles y arroz con un toque picante."
     },
@@ -36,34 +36,27 @@
       "id": "5",
       "name": "Fries",
       "price": 1,
-      "stock": 4,
+      "stock": 0,
       "img": "🍟",
       "description": "Papas fritas crujientes con sal marina."
     },
     {
-      "id": "22fb",
-      "name": "Comida",
-      "description": "Comida",
-      "price": 1,
-      "stock": 2,
-      "img": "🍉"
-    },
-    {
-      "id": "cd4e",
-      "name": "Comida 2",
-      "description": "Cpmida 2",
-      "price": 1,
-      "stock": 2,
-      "img": "🍋"
-    },
-    {
-      "id": "b8d1",
-      "name": "Comkda 3",
-      "description": "Hddhdh",
-      "price": 4,
-      "stock": 5,
-      "img": "😭"
+
+      "id": "ce14",
+      "name": "hola",
+      "description": "holaa ",
+      "price": 45,
+      "stock": 16,
+      "img": "🐢"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "1",
+      "name": "Burger",
+      "price": 5,
+      "quantity": 3
+    }
+  ]
+
 }

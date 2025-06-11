@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import OrderElement from './OrderElement';
 
-export default function OrderList({ order }) {
+export default function OrderList({ order, onRemove }) {
   const subtotal = order.reduce((total, item) => total + item.price * item.quantity, 0);
   const envio = 45;
   const total = subtotal + envio;
@@ -14,7 +14,7 @@ export default function OrderList({ order }) {
       {order.length === 0 ? (
         <Text>No hay productos en el carrito.</Text>
       ) : (
-        order.map((item) => <OrderElement key={item.id} food={item} />)
+        order.map((item) => <OrderElement key={item.id} food={item} onRemove={onRemove} />)
       )}
 
       <View style={styles.resumen}>
