@@ -14,6 +14,5 @@ export default function App() {
         <Stack.Screen name="AddFood" component={AddFood} options={{ title: 'Agregar Comida' }} />
         <Stack.Screen name="Orders" component={OrderPage} options={{ title: 'Órdenes' }} />
       </Stack.Navigator>
-
   );
 }

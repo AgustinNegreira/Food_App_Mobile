@@ -32,6 +32,17 @@ export default function OrderPage() {
             .finally(() => setLoading(false));
     }, []);
 
+    const handleRemoveOrder = (id) => {
+
+        //actualizar localmente
+
+        const newOrders = orders.filter(item => item.id !== id);
+        setOrders(newOrders);
+
+        //actualizar en json server
+
+    };
+
     const totalOrders = orders.reduce((sum, item) => sum + item.quantity, 0);
     const totalPrice = orders.reduce((sum, item) => sum + item.quantity * item.price, 0) + 45;
 
@@ -44,7 +55,7 @@ export default function OrderPage() {
             ) : (
                 <>
                     <ScrollView contentContainerStyle={styles.scrollContainer}>
-                        <OrderList order={orders} />
+                        <OrderList order={orders} onRemove={handleRemoveOrder} />
                     </ScrollView>
                     <OrderEmergent totalOrders={totalOrders} totalPrice={totalPrice} />
                 </>
